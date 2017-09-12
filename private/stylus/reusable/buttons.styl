@@ -1,0 +1,21 @@
+.standardButton {
+   display flex
+   justify-content center
+   align-items center
+   width 100%
+   max-width px(col(6))
+   background-color $color-white1
+   color $color-white1
+   box-shadow 0 4px 8px 0 rgba($color-black1, .4)
+   font-size $font-5
+   @media $lg {
+      height 70px
+   }
+   @media $md {
+      height 60px
+   }
+   @media $sm {
+      height 50px
+      font-size $font-3
+   }
+}

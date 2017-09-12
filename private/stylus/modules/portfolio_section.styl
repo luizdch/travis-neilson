@@ -1,0 +1,77 @@
+.portfolioSection {
+   @media $md-lg {
+      flex-direction row
+   }
+
+
+
+
+
+
+   > div {
+      fullBackgroundImage('../img/general/portfolio_bg.png')
+      background-size contain
+      background-repeat repeat
+      transition background-color .3s ease
+      padding $space-3 $space-1
+   }
+   .dribbbleContainer {
+      background-color $color-blue3
+   }
+   .behanceContainer {
+      background-color $color-pink1
+   }
+
+
+
+
+
+   h2 {
+      text-align center
+   }
+
+
+
+
+
+
+
+   .portfolioGrid {
+      flex-direction row
+      flex-wrap wrap
+      @media $md-lg {
+         margin-top $space-4
+      }
+   }
+   .portfolioGrid a {
+      preserveAspectRatio(1, 1)
+      width calc(50% - 5px)
+      border 3px solid $color-white1
+      box-shadow 0 4px 8px 0 rgba($color-black1, .4)
+      transition transform .3s ease
+      &:hover {
+         @media $md-lg {
+            z-index 1
+            transform scale(1.1)
+         }
+      }
+   }
+   .portfolioGrid a:nth-child(odd) {
+      margin-right $space-1
+   }
+   .portfolioGrid a:nth-child(2) ~ a {
+      margin-top $space-1
+   }
+
+
+
+
+
+   .dribbbleContainer .standardButton {
+      color $color-blue3
+   }
+   .behanceContainer .standardButton {
+      color $color-pink1
+   }
+
+}

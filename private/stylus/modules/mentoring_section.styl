@@ -1,0 +1,152 @@
+.mentoringSection {
+   overflow hidden
+   background-image url('../img/general/mentoring_bg.jpg')
+   @media $md-lg {
+      height 550px
+   }
+
+
+
+
+
+   $numberOfPeople = 5
+   $percentageCoeficient = 100% / $numberOfPeople
+   .peopleSlider {
+      margin-top 0
+      @media $sm {
+         max-width 100%
+         padding-top 210px
+      }
+   }
+   .peopleContainer {
+      justify-content space-around
+      transition transform .25s ease-in-out
+      @media $md-lg {
+         align-self flex-start
+         width auto
+         height 100%
+      }
+      @media $sm {
+         flex-direction row
+      }
+      @media (max-width: 650px) {
+         width (100% * $numberOfPeople / 3)
+      }
+   }
+   for $personIndex in (0..$numberOfPeople - 1) {
+      $translatePercentage = (floor($numberOfPeople / 2 - .5) - $personIndex) * $percentageCoeficient
+      .peopleContainer.js-person{$personIndex} {
+         @media $md-lg {
+            transform translateY($translatePercentage)
+         }
+         @media $sm {
+            transform translateX($translatePercentage)
+         }
+      }
+   }
+   .personBubbleContainer {
+      width auto
+      @media(max-width: 650px) {
+         align-items center
+         width 1%
+      }
+   }
+   .person {
+      fullBackgroundImage()
+      background-position 0 0
+      background-image url('../img/general/people_sprite.png')
+      width 80px
+      height 80px
+      border-radius 50%
+      box-shadow 0 4px 8px 0 rgba($color-black1, .4)
+      cursor pointer
+      user-select none
+      -webkit-tap-highlight-color rgba(255, 255, 255, 0)
+      @media(max-width: 400px) {
+         width 60px
+         height 60px
+      }
+   }
+   .personBubbleContainer:nth-child(2) .person {
+      background-position 0 25%
+   }
+   .personBubbleContainer:nth-child(3) .person {
+      background-position 0 25% * 2
+   }
+   .personBubbleContainer:nth-child(4) .person {
+      background-position 0 25% * 3
+   }
+   .personBubbleContainer:nth-child(5) .person {
+      background-position 0 25% * 4
+   }
+   .bubble {
+      opacity 0
+      position absolute
+      justify-content center
+      align-items center
+      width 380px
+      height 200px
+      padding 30px
+      border 3px solid $color-white1
+      border-radius 50px
+      background-color rgba($color-black1, .7)
+      transition all .3s cubic-bezier(0, .53, .34, 1.1) .15s
+      @media $md-lg {
+         right 50%
+         bottom 50%
+         transform-origin bottom left
+         transform translateX(100%) scale(0)
+         border-bottom-left-radius 10px
+      }
+      @media $sm {
+         top 50%
+         left 50%
+         transform-origin bottom center
+         transform translate(-50%, -100%) scale(0)
+      }
+      @media(max-width: 430px) {
+         width 6000%
+      }
+   }
+   .bubble.js-active {
+      opacity 1
+      @media $md-lg {
+         right -10px
+         transform translateX(100%) scale(1)
+      }
+      @media $sm {
+         top -10px
+         transform translate(-50%, -100%) scale(1)
+      }
+   }
+   .bubble blockquote {
+      color $color-white2
+      font-style italic
+      @media (max-width 350px) {
+         font-size 14px
+      }
+      @media (max-width 275px) {
+         font-size 13px
+      }
+   }
+   .bubble blockquote span {
+      display block
+      margin-top 10px
+      text-align right
+   }
+
+
+
+
+
+   .textButtonContainer {
+      justify-content flex-end
+      @media $md-lg {
+         padding-bottom $space-5
+      }
+   }
+   .standardButton {
+      color $color-blue1
+   }
+
+}

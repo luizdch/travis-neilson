@@ -1,0 +1,52 @@
+// general
+*, *:before, *:after {
+   box-sizing border-box
+   position relative
+   margin 0
+   padding 0
+}
+body, div, section, header, footer, nav, aside, main {
+   display flex
+   flex-direction column
+   align-items center
+   width 100%
+}
+body {
+   overflow-x hidden
+   font-family 'fira sans'
+   background-color #f1f1f1
+}
+ul {
+   list-style none
+}
+a {
+   text-decoration none
+   color $color-yellow1
+}
+input {
+   border none
+   background-color transparent
+   outline none
+}
+button {
+   appearance none
+   background-color transparent
+   border none
+   outline none
+   cursor pointer
+}
+img, h1, h2, h3, p, blockquote {
+   width 100%
+}
+main {
+   flex-grow 1
+   @media $md-lg {
+      padding-left 135px
+   }
+   @media $sm {
+      padding-top 50px
+   }
+   @media (min-width $md-minWidth) and (max-width 1000px) {
+      padding-left 110px
+   }
+}

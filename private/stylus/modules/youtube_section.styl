@@ -1,0 +1,43 @@
+.youtubeSection {
+   background-image url('../img/general/youtube_bg.jpg')
+   @media $md-lg {
+      height 550px
+   }
+
+
+
+
+   .standardButton {
+      color $color-red1
+   }
+
+
+
+
+
+   .videoContainer {
+      @media $md-lg {
+         background-image url('../img/general/youtube_stripe.png')
+         background-position center -20px
+         background-repeat repeat-y
+      }
+      @media $sm {
+         order: -1
+         max-width 100%
+         margin-top 0
+      }
+   }
+   .flexVideo {
+      preserveAspectRatio(16, 9)
+      @media $lg {
+         transform scale(1.5)
+      }
+      @media $sm {
+         max-width 700px
+      }
+   }
+   .flexVideo iframe {
+      fullBox()
+   }
+
+}

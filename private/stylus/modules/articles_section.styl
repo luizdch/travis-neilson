@@ -1,0 +1,152 @@
+.articlesSection {
+   background-image url('../img/general/articles_bg.png')
+   background-color $color-pink2
+
+
+
+
+
+   .textButtonContainer {
+      @media $md-lg {
+         margin auto
+      }
+   }
+   .textButtonContainer h2 {
+      color $color-black2
+   }
+   .standardButton {
+      background-color $color-blue2
+   }
+
+
+
+
+
+   .articlesGrid {
+      flex-direction row
+      flex-wrap wrap
+      @media $md-lg {
+         width col(6)
+      }
+      @media $sm {
+         order -1
+         max-width 700px
+      }
+   }
+
+   .article {
+      fullBackgroundImage()
+      preserveAspectRatio(1, 1)
+      overflow hidden
+      width col(4)
+      opacity 0
+      transition opacity .3s linear
+      outline 1px solid transparent
+      @media $lg {
+         width 25%
+      }
+      @media $md {
+         width 33.333%
+      }
+      @media $sm {
+         width 25%
+      }
+      @media(max-width: 550px) {
+         width 33.333%
+      }
+   }
+   .article.js-show {
+      opacity 1
+      cursor pointer
+   }
+   .article.js-animate {
+      animation tada 1s linear
+      z-index 1
+   }
+   .article:nth-child(1) {
+      background-image url('../img/articles/article_1.png')
+   }
+   .article:nth-child(2) {
+      background-image url('../img/articles/article_2.jpg')
+   }
+   .article:nth-child(3) {
+      background-image url('../img/articles/article_3.jpg')
+   }
+   .article:nth-child(4) {
+      background-image url('../img/articles/article_4.jpg')
+   }
+   .article:nth-child(5) {
+      background-image url('../img/articles/article_5.jpg')
+   }
+   .article:nth-child(6) {
+      background-image url('../img/articles/article_6.png')
+   }
+   .article:nth-child(7) {
+      background-image url('../img/articles/article_7.jpg')
+   }
+   .article:nth-child(8) {
+      background-image url('../img/articles/article_8.png')
+   }
+   .article:nth-child(9) {
+      background-image url('../img/articles/article_9.png')
+   }
+   .article:nth-child(10) {
+      background-image url('../img/articles/article_10.jpg')
+   }
+   .article:nth-child(11) {
+      background-image url('../img/articles/article_11.png')
+   }
+   .article:nth-child(12) {
+      background-image url('../img/articles/article_12.png')
+   }
+   .articlePanel {
+      fullBox()
+      display flex
+      flex-direction column
+      justify-content flex-end
+      background-color rgba($color-blue1, .7)
+      padding 5px
+      transform translateY(100%) scale(.5)
+      transition: all .4s ease
+      pointer-events none
+   }
+   .article:hover .articlePanel {
+      transform translateY(0) scale(1)
+   }
+   .article.js-show .articlePanel {
+      pointer-events auto
+   }
+   .articlePanel h3, .articlePanel p {
+      color $color-white1
+      font-weight 100
+   }
+   .articlePanel h3 {
+      @media(max-width 370px) {
+         font-size 15px
+      }
+   }
+   .articlePanel p {
+      font-size 13px
+      @media(max-width 370px) {
+         font-size 11px
+      }
+   }
+   @keyframes tada {
+      from {
+         transform scale3d(1, 1, 1)
+      }
+      10%, 20% {
+         transform scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg)
+      }
+      30%, 50%, 70%, 90% {
+         transform scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)
+      }
+      40%, 60%, 80% {
+         transform scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)
+      }
+      to {
+         transform scale3d(1, 1, 1)
+      }
+   }
+
+}
